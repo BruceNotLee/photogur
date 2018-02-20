@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+<p>
+  <strong>Title:</strong>
+  <%= @picture.title %>
+</p>
+
+<p>
+  <%= image_tag @picture.url %>
+</p>
+
+<%= link_to 'Edit', edit_picture_path(@picture) %> |
+<%= link_to 'Back', pictures_path %>
+
+<h3>Comments</h3>
+<% @picture.comments.each do |x| %>
+  <p>
+    <%= x.comment %>
+    <br>
+    Added on: <%= x.created_at %>
+  </p>
+<% end %>
